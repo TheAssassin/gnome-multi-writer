@@ -8,7 +8,9 @@ install:
   - sudo pip3 install meson
 
 script:
-  - ./configure --prefix=/usr
+  - mkdir build/
+  - cd build/
+  - ../configure --prefix=/usr
   - make -j$(nproc)
   - make install DESTDIR=$(readlink -f appdir) ; find appdir/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
