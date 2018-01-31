@@ -5,7 +5,7 @@ set -x
 
 apt-get update
 apt-get install -y python3-pip ninja-build libgtk-3-dev libgusb-dev libudisks2-dev libcanberra-dev libcanberra-dev \
-    libcanberra-gtk3-dev libpolkit-gobject-1-dev appstream-util
+    libcanberra-gtk3-dev libpolkit-gobject-1-dev appstream-util locales
 pip3 install meson==0.43 # 0.44+ don't work -- https://github.com/mesonbuild/meson/issues/2763
 
 locale=en_US.UTF-8
