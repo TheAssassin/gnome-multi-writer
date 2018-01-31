@@ -4,7 +4,7 @@ set -e
 set -x
 
 apt-get update
-apt-get install -y python3-pip ninja-build libgtk-3-dev libgusb-dev
+apt-get install -y python3-pip ninja-build libgtk-3-dev libgusb-dev libudisks2-dev
 pip3 install meson
 
 mkdir build/
