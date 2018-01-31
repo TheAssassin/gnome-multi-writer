@@ -4,7 +4,7 @@ sudo: require
 dist: trusty
 
 install:
-  - sudo apt-get install python3-pip
+  - sudo apt-get install python3-pip ninja-build
   - sudo pip3 install meson
 
 script:
