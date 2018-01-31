@@ -3,6 +3,7 @@
 set -e
 set -x
 
+apt-get update
 apt-get install python3-pip ninja-build libgtk-3-dev
 pip3 install meson
 
