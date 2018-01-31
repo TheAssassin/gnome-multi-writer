@@ -3,8 +3,8 @@
 set -e
 set -x
 
-sudo apt-get install python3-pip ninja-build libgtk-3-dev
-sudo pip3 install meson
+apt-get install python3-pip ninja-build libgtk-3-dev
+pip3 install meson
 
 mkdir build/
 cd build/
