@@ -5,16 +5,13 @@ set -x
 
 apt-get update
 apt-get install -y python3-pip ninja-build libgtk-3-dev libgusb-dev libudisks2-dev libcanberra-dev libcanberra-dev \
-    libcanberra-gtk3-dev libpolkit-gobject-1-dev
+    libcanberra-gtk3-dev libpolkit-gobject-1-dev appstream-util
 pip3 install meson
 
-mkdir build/
-cd build/
+meson --prefix=/usr _build .
 
-../configure --prefix=/usr
-
-make -j$(nproc)
-make install DESTDIR=$(readlink -f appdir) ; find appdir/
+ninja -v -C _build
+ninja -v install
 
 wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
 chmod a+x linuxdeployqt-continuous-x86_64.AppImage
